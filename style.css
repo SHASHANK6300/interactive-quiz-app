@@ -1,0 +1,106 @@
+:root{
+  --bg:#0f172a;
+  --card:#111827;
+  --muted:#94a3b8;
+  --text:#e5e7eb;
+  --primary:#2563eb;
+  --primary-700:#1d4ed8;
+  --green:#16a34a;
+  --red:#dc2626;
+  --border:#1f2937;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Inter,Arial;
+  color:var(--text);
+  background:linear-gradient(180deg,#0b1220, var(--bg));
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;
+}
+
+.container{
+  width:clamp(320px, 90vw, 720px);
+  margin:32px auto 16px;
+}
+
+h1{
+  text-align:center;
+  font-weight:800;
+  letter-spacing:.5px;
+  margin:0 0 18px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.hidden{display:none}
+
+.quiz-top{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;margin-bottom:10px;
+}
+.status{display:flex;gap:14px;color:var(--muted)}
+.timer{font-weight:700}
+
+#question{margin:6px 0 12px}
+
+.answers{display:grid;gap:10px}
+.btn{
+  border:1px solid var(--border);
+  background:#0b1220;
+  color:var(--text);
+  padding:10px 14px;border-radius:999px;
+  cursor:pointer;transition:.15s; font-weight:600;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+
+.primary{background:var(--primary);border-color:transparent}
+.primary:hover{background:var(--primary-700)}
+.ghost{background:transparent}
+
+.answer{
+  width:100%;
+  text-align:left;
+  border:1px solid var(--border);
+  background:#0c1322;
+  padding:12px 14px;border-radius:12px;
+  cursor:pointer;transition:.15s;
+}
+.answer:hover{background:#111a2b}
+.answer.correct{
+  background:rgba(22,163,74,.12);
+  border-color:rgba(22,163,74,.5);
+}
+.answer.wrong{
+  background:rgba(220,38,38,.1);
+  border-color:rgba(220,38,38,.5);
+}
+
+.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
+
+.footer{
+  color:var(--muted);
+  font-size:12px;
+  margin:12px 0 24px;
+  text-align:center;
+}
+
+.review{
+  margin-top:10px;
+  display:grid;gap:10px;
+}
+.review-item{
+  border:1px dashed var(--border);
+  border-radius:12px;padding:10px;
+  background:#0c1322;
+}
+.review-item h4{margin:0 0 6px;font-size:14px}
+.review-item p{margin:0;font-size:13px;color:var(--muted)}
